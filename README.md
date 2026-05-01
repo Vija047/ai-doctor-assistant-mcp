@@ -86,6 +86,22 @@ Start Frontend:
 npm run dev
 ```
 
+## 🔐 Demo Credentials
+
+To access the different dashboards, use the following credentials:
+
+### **Doctor Dashboard**
+- **Email:** `admin@medicare.com`
+- **Password:** `admin123`
+- **Role:** Select "Doctor" toggle
+
+### **Patient Dashboard**
+- **Email:** `john@example.com` (or register a new one)
+- **Password:** `securepassword123`
+- **Role:** Select "Patient" toggle
+
+---
+
 ## 💬 Sample Prompts
 
 ### For Patients:
@@ -95,22 +111,23 @@ npm run dev
 
 ### Patients screenshot 
 ### Login
-![alt text](image-9.png)
+
+![alt text](readme%20assests/image-9.png)
 
 ### chat Screenshot
-![alt text](image-3.png)
+![alt text](readme%20assests/image-3.png)
 
 ### Booked calender Screenshot
-![alt text](image-8.png)
+![alt text](readme%20assests/image-8.png)
 
 ### confirmation email Screenshot
-![alt text](image-7.png)
+![alt text](readme%20assests/image-7.png)
 
 ### Dashboard Screenshot
-![alt text](image-4.png)
+![alt text](readme%20assests/image-4.png)
 
 ### Booked history Screenshot
-![alt text](image-5.png)
+![alt text](readme%20assests/image-5.png)
 ### For Doctors:
 - "How many appointments do I have today?"
 - "What are the common symptoms patients have reported this week?"
@@ -118,16 +135,16 @@ npm run dev
 
 ### For Doctors screenshot
 ### Login
-![alt text](image-10.png)
+![alt text](readme%20assests/image-10.png)
 
 ### Chat screenshots
-![alt text](image.png)
+![alt text](readme%20assests/image.png)
 
 ### Schedule screenshot
-![alt text](image-2.png)
+![alt text](readme%20assests/image-2.png)
 
 ### dashbaord screenshots
-![alt text](image-2.png)
+![alt text](readme%20assests/image-2.png)
 <!-- ![alt text](image-1.png) -->
 ---
 *Developed as part of the Agentic AI Developer Intern Assignment.*
