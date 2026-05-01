@@ -1,0 +1,134 @@
+{
+	"info": {
+		"name": "Doctor AI MCP Agent",
+		"description": "Postman collection to test the Agentic AI Doctor Appointment System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register Patient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"johndoe\",\n    \"email\": \"john@example.com\",\n    \"password\": \"securepassword123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/register",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8000",
+							"path": ["register"]
+						}
+					}
+				},
+				{
+					"name": "Login Patient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"johndoe\",\n    \"password\": \"securepassword123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/login",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8000",
+							"path": ["login"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "AI Agent",
+			"item": [
+				{
+					"name": "1. Check Availability",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"session_id\": \"user_123\",\n    \"message\": \"Is Dr. Smith available tomorrow?\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/chat",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8000",
+							"path": ["chat"]
+						}
+					}
+				},
+				{
+					"name": "2. Book Appointment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"session_id\": \"user_123\",\n    \"message\": \"Please book an appointment for me (John Doe) with Dr. Smith tomorrow at 10:30. My email is vr7797387@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/chat",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8000",
+							"path": ["chat"]
+						}
+					}
+				},
+				{
+					"name": "3. Get Doctor Report",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"session_id\": \"admin_1\",\n    \"message\": \"Give me the general stats report for the clinic.\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/chat",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8000",
+							"path": ["chat"]
+						}
+					}
+				}
+			]
+		}
+	]
+}
