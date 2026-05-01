@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE_URL } from '../config';
 import { BarChart, Bar, XAxis, ResponsiveContainer } from 'recharts';
 
 const Analytics = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/analytics')
+    fetch(`${API_BASE_URL}/api/analytics`)
       .then(res => res.json())
       .then(d => setData(d))
       .catch(err => console.error(err));

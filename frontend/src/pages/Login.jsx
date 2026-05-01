@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { EyeOff, Clock } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 const Login = () => {
   const [isDoctor, setIsDoctor] = useState(true);
@@ -26,7 +27,7 @@ const Login = () => {
       }
 
       // Patient login or register hitting the backend
-      const endpoint = isLoginMode ? 'http://localhost:8000/login' : 'http://localhost:8000/register';
+      const endpoint = isLoginMode ? `${API_BASE_URL}/login` : `${API_BASE_URL}/register`;
       
       const payload = isLoginMode 
         ? { username: email, password: password } // Backend expects 'username' for login, we send email string as username for simplicity

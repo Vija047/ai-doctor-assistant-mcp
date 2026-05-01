@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Paperclip, Bot } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 
 const Chat = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -94,7 +95,7 @@ const Chat = () => {
       // Connect to the real FastAPI backend
       const role = localStorage.getItem('role') || 'patient';
       const username = localStorage.getItem('username') || 'guest';
-      const response = await fetch('http://localhost:8000/chat', {
+      const response = await fetch(`${API_BASE_URL}/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

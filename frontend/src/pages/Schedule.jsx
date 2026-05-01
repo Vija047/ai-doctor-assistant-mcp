@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE_URL } from '../config';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
@@ -10,7 +11,7 @@ const Schedule = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/appointments')
+    fetch(`${API_BASE_URL}/api/appointments`)
       .then(res => res.json())
       .then(data => {
         setAppointments(data);

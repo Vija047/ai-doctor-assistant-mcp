@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE_URL } from '../config';
 
 const Patients = () => {
   const [patients, setPatients] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/patients')
+    fetch(`${API_BASE_URL}/api/patients`)
       .then(res => res.json())
       .then(data => setPatients(data))
       .catch(err => console.error(err));

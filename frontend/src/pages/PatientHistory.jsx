@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE_URL } from '../config';
 
 const PatientHistory = () => {
   const [appointments, setAppointments] = useState([]);
@@ -6,8 +7,8 @@ const PatientHistory = () => {
   useEffect(() => {
     const username = localStorage.getItem('username');
     const endpoint = username 
-      ? `http://localhost:8000/api/appointments/${username}`
-      : 'http://localhost:8000/api/appointments';
+      ? `${API_BASE_URL}/api/appointments/${username}`
+      : `${API_BASE_URL}/api/appointments`;
 
     fetch(endpoint)
       .then(res => res.json())

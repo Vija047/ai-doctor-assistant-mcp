@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Users, Calendar, Thermometer, Clock, UserRound } from 'lucide-react';
 import { BarChart, Bar, XAxis, ResponsiveContainer } from 'recharts';
 import { Link } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 
 const Dashboard = () => {
   const [analytics, setAnalytics] = useState(null);
@@ -14,22 +15,22 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (isDoctor) {
-      fetch('http://localhost:8000/api/analytics')
+      fetch(`${API_BASE_URL}/api/analytics`)
         .then(res => res.json())
         .then(data => setAnalytics(data))
         .catch(err => console.error(err));
 
-      fetch('http://localhost:8000/api/appointments')
+      fetch(`${API_BASE_URL}/api/appointments`)
         .then(res => res.json())
         .then(data => setRecentAppointments(data.slice(-5).reverse())) // Get 5 most recent
         .catch(err => console.error(err));
     } else {
-      fetch('http://localhost:8000/api/doctors')
+      fetch(`${API_BASE_URL}/api/doctors`)
         .then(res => res.json())
         .then(data => setDoctors(data))
         .catch(err => console.error(err));
         
-      fetch(`http://localhost:8000/api/appointments/${username}`)
+      fetch(`${API_BASE_URL}/api/appointments/${username}`)
         .then(res => res.json())
         .then(data => setRecentAppointments(data.slice(-5).reverse()))
         .catch(err => console.error(err));
