@@ -21,7 +21,7 @@ const Sidebar = ({ isDoctor }) => {
   const doctorLinks = [
     { name: 'Dashboard', icon: <LayoutDashboard size={20} />, path: '/dashboard' },
     { name: 'Patient Records', icon: <Users size={20} />, path: '/patients' },
-    { name: 'Messages', icon: <MessageSquare size={20} />, path: '/chat' },
+    { name: 'AI Assistant', icon: <MessageSquare size={20} />, path: '/chat' },
     { name: 'Calendar', icon: <Calendar size={20} />, path: '/schedule' },
     { name: 'Settings', icon: <Settings size={20} />, path: '/settings' },
   ];
