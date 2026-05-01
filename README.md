@@ -102,7 +102,7 @@ To access the different dashboards, use the following credentials:
 
 ---
 
-## 💬 Sample Prompts
+## 💬 Sample Prompts:
 
 ### For Patients:
 - "I want to book an appointment with Dr. Ahuja tomorrow morning."
