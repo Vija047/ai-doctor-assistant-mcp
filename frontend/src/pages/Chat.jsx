@@ -119,10 +119,10 @@ const Chat = () => {
       }]);
     } catch (error) {
       console.error("Chat error:", error);
-      // Fallback message if backend is not running
+      // Fallback message if backend is unreachable or returns error
       setMessages(prev => [...prev, { 
         role: 'bot', 
-        content: "Sorry, I couldn't connect to the server. Please ensure the FastAPI backend is running on port 8000.", 
+        content: "I'm having trouble connecting to my brain (the AI server) right now. Please check your internet connection or try again in a few moments.", 
         time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) 
       }]);
     } finally {

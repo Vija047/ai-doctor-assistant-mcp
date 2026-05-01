@@ -184,8 +184,7 @@ async def process_chat(session_id: str, user_message: str, user_role: str = "pat
                 )
             
             # After executing all tools, loop continues to get final response from LLM
-        else:
             # Final text response
-            final_reply = response_message.content
+            final_reply = response_message.content or "I'm sorry, I encountered an issue generating a response. How else can I help you?"
             session_memory.add_message(session_id, "assistant", final_reply)
             return final_reply, tool_used_name
