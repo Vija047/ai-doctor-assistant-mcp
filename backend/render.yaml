@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: smart-doctor-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: DATABASE_URL
+      - key: NVIDIA_API_KEY
+      - key: NVIDIA_API_BASE
+      - key: LLM_MODEL
+      - key: SMTP_SERVER
+      - key: SMTP_PORT
+      - key: SMTP_USERNAME
+      - key: SMTP_PASSWORD
