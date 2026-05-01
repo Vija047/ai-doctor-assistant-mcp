@@ -7,3 +7,8 @@ pydantic-settings
 python-dotenv
 openai
 gunicorn
+google-api-python-client
+google-auth-oauthlib
+google-auth
+google-auth-httplib2
+requests
