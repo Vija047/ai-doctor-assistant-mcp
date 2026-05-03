@@ -138,6 +138,7 @@ async def process_chat(session_id: str, user_message: str, user_role: str = "pat
             tool_choice="auto"
         )
         
+        
         response_message = response.choices[0].message
         
         # Check if the LLM wants to call a tool
